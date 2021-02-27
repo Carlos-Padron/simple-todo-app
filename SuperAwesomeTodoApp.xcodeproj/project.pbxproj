@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072384A525E9E3FA008818F8 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072384A425E9E3FA008818F8 /* TaskModel.swift */; };
+		072384A825E9E77E008818F8 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072384A725E9E77E008818F8 /* Card.swift */; };
+		072384AE25E9E871008818F8 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072384AD25E9E871008818F8 /* TaskController.swift */; };
+		072384B425EA0FCB008818F8 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072384B325EA0FCB008818F8 /* Header.swift */; };
 		073865D925E7537F003B33F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073865D825E7537F003B33F3 /* AppDelegate.swift */; };
 		073865DB25E7537F003B33F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073865DA25E7537F003B33F3 /* SceneDelegate.swift */; };
 		073865DD25E7537F003B33F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073865DC25E7537F003B33F3 /* ViewController.swift */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		072384A425E9E3FA008818F8 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		072384A725E9E77E008818F8 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		072384AD25E9E871008818F8 /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
+		072384B325EA0FCB008818F8 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		073865D525E7537F003B33F3 /* SuperAwesomeTodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperAwesomeTodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		073865D825E7537F003B33F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		073865DA25E7537F003B33F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +45,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		070D3D3925E9E2CD007C33B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				072384A425E9E3FA008818F8 /* TaskModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		072384A225E9E3D2008818F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				072384A725E9E77E008818F8 /* Card.swift */,
+				072384B325EA0FCB008818F8 /* Header.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		072384A325E9E3D8008818F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				072384AD25E9E871008818F8 /* TaskController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		073865CC25E7537F003B33F3 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +89,9 @@
 		073865D725E7537F003B33F3 /* SuperAwesomeTodoApp */ = {
 			isa = PBXGroup;
 			children = (
+				072384A325E9E3D8008818F8 /* Controller */,
+				072384A225E9E3D2008818F8 /* View */,
+				070D3D3925E9E2CD007C33B8 /* Model */,
 				073865D825E7537F003B33F3 /* AppDelegate.swift */,
 				073865DA25E7537F003B33F3 /* SceneDelegate.swift */,
 				073865DC25E7537F003B33F3 /* ViewController.swift */,
@@ -137,8 +173,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				072384AE25E9E871008818F8 /* TaskController.swift in Sources */,
 				073865DD25E7537F003B33F3 /* ViewController.swift in Sources */,
+				072384A825E9E77E008818F8 /* Card.swift in Sources */,
+				072384B425EA0FCB008818F8 /* Header.swift in Sources */,
 				073865D925E7537F003B33F3 /* AppDelegate.swift in Sources */,
+				072384A525E9E3FA008818F8 /* TaskModel.swift in Sources */,
 				073865DB25E7537F003B33F3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
