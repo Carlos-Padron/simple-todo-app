@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0700C2AD25EDE9F60094DA7F /* AddTaskModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700C2AC25EDE9F60094DA7F /* AddTaskModal.swift */; };
+		0700C2B625EDEC6E0094DA7F /* Modal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0700C2B525EDEC6E0094DA7F /* Modal.storyboard */; };
+		0700C2B925EDF09A0094DA7F /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700C2B825EDF09A0094DA7F /* RoundedButton.swift */; };
 		072384A525E9E3FA008818F8 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072384A425E9E3FA008818F8 /* TaskModel.swift */; };
 		072384A825E9E77E008818F8 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072384A725E9E77E008818F8 /* Card.swift */; };
 		072384B425EA0FCB008818F8 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072384B325EA0FCB008818F8 /* Header.swift */; };
@@ -16,11 +19,16 @@
 		073865E025E7537F003B33F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073865DE25E7537F003B33F3 /* Main.storyboard */; };
 		073865E225E7537F003B33F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 073865E125E7537F003B33F3 /* Assets.xcassets */; };
 		073865E525E7537F003B33F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073865E325E7537F003B33F3 /* LaunchScreen.storyboard */; };
+		07AFE2FD25ECB44D00EB9C8F /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AFE2FC25ECB44D00EB9C8F /* DateExtension.swift */; };
+		07AFE30025ECB85D00EB9C8F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AFE2FF25ECB85D00EB9C8F /* StringExtension.swift */; };
 		07EEA06A25EAB19B0039125D /* TaskControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEA06925EAB19B0039125D /* TaskControllerViewController.swift */; };
 		07EEA06F25EAB47F0039125D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEA06E25EAB47F0039125D /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0700C2AC25EDE9F60094DA7F /* AddTaskModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskModal.swift; sourceTree = "<group>"; };
+		0700C2B525EDEC6E0094DA7F /* Modal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Modal.storyboard; sourceTree = "<group>"; };
+		0700C2B825EDF09A0094DA7F /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		072384A425E9E3FA008818F8 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		072384A725E9E77E008818F8 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		072384B325EA0FCB008818F8 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
@@ -32,6 +40,8 @@
 		073865E125E7537F003B33F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		073865E425E7537F003B33F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		073865E625E7537F003B33F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07AFE2FC25ECB44D00EB9C8F /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		07AFE2FF25ECB85D00EB9C8F /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		07EEA06925EAB19B0039125D /* TaskControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskControllerViewController.swift; sourceTree = "<group>"; };
 		07EEA06E25EAB47F0039125D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,6 +57,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0700C2AF25EDEC290094DA7F /* CustomClases */ = {
+			isa = PBXGroup;
+			children = (
+				072384A725E9E77E008818F8 /* Card.swift */,
+				072384B325EA0FCB008818F8 /* Header.swift */,
+				072384B625EA12DF008818F8 /* TaskCollectionCell.swift */,
+				0700C2B825EDF09A0094DA7F /* RoundedButton.swift */,
+			);
+			path = CustomClases;
+			sourceTree = "<group>";
+		};
+		0700C2B125EDEC410094DA7F /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				073865DE25E7537F003B33F3 /* Main.storyboard */,
+				0700C2B525EDEC6E0094DA7F /* Modal.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
 		070D3D3925E9E2CD007C33B8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -58,9 +88,8 @@
 		072384A225E9E3D2008818F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				072384A725E9E77E008818F8 /* Card.swift */,
-				072384B325EA0FCB008818F8 /* Header.swift */,
-				072384B625EA12DF008818F8 /* TaskCollectionCell.swift */,
+				0700C2B125EDEC410094DA7F /* StoryBoards */,
+				0700C2AF25EDEC290094DA7F /* CustomClases */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -69,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				07EEA06925EAB19B0039125D /* TaskControllerViewController.swift */,
+				0700C2AC25EDE9F60094DA7F /* AddTaskModal.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -93,12 +123,11 @@
 			isa = PBXGroup;
 			children = (
 				07EEA06C25EAB4410039125D /* Uitls */,
-				072384A325E9E3D8008818F8 /* Controller */,
-				072384A225E9E3D2008818F8 /* View */,
 				070D3D3925E9E2CD007C33B8 /* Model */,
+				072384A225E9E3D2008818F8 /* View */,
+				072384A325E9E3D8008818F8 /* Controller */,
 				073865D825E7537F003B33F3 /* AppDelegate.swift */,
 				073865DA25E7537F003B33F3 /* SceneDelegate.swift */,
-				073865DE25E7537F003B33F3 /* Main.storyboard */,
 				073865E125E7537F003B33F3 /* Assets.xcassets */,
 				073865E325E7537F003B33F3 /* LaunchScreen.storyboard */,
 				073865E625E7537F003B33F3 /* Info.plist */,
@@ -106,9 +135,19 @@
 			path = SuperAwesomeTodoApp;
 			sourceTree = "<group>";
 		};
+		07AFE2FB25ECB42A00EB9C8F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				07AFE2FC25ECB44D00EB9C8F /* DateExtension.swift */,
+				07AFE2FF25ECB85D00EB9C8F /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		07EEA06C25EAB4410039125D /* Uitls */ = {
 			isa = PBXGroup;
 			children = (
+				07AFE2FB25ECB42A00EB9C8F /* Extensions */,
 				07EEA06D25EAB4510039125D /* Constants */,
 			);
 			path = Uitls;
@@ -179,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0700C2B625EDEC6E0094DA7F /* Modal.storyboard in Resources */,
 				073865E525E7537F003B33F3 /* LaunchScreen.storyboard in Resources */,
 				073865E225E7537F003B33F3 /* Assets.xcassets in Resources */,
 				073865E025E7537F003B33F3 /* Main.storyboard in Resources */,
@@ -194,10 +234,14 @@
 			files = (
 				072384B725EA12DF008818F8 /* TaskCollectionCell.swift in Sources */,
 				072384A825E9E77E008818F8 /* Card.swift in Sources */,
+				07AFE30025ECB85D00EB9C8F /* StringExtension.swift in Sources */,
 				072384B425EA0FCB008818F8 /* Header.swift in Sources */,
 				073865D925E7537F003B33F3 /* AppDelegate.swift in Sources */,
+				07AFE2FD25ECB44D00EB9C8F /* DateExtension.swift in Sources */,
 				07EEA06A25EAB19B0039125D /* TaskControllerViewController.swift in Sources */,
+				0700C2B925EDF09A0094DA7F /* RoundedButton.swift in Sources */,
 				072384A525E9E3FA008818F8 /* TaskModel.swift in Sources */,
+				0700C2AD25EDE9F60094DA7F /* AddTaskModal.swift in Sources */,
 				073865DB25E7537F003B33F3 /* SceneDelegate.swift in Sources */,
 				07EEA06F25EAB47F0039125D /* Constants.swift in Sources */,
 			);

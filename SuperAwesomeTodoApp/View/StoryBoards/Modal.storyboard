@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9bb-kv-RfU">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Task Modal-->
+        <scene sceneID="MvM-Ma-etj">
+            <objects>
+                <viewController storyboardIdentifier="AddTaskModal" id="9bb-kv-RfU" customClass="AddTaskModal" customModule="SuperAwesomeTodoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pgL-3o-9J6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mSg-jo-O3Y" customClass="Card" customModule="SuperAwesomeTodoApp" customModuleProvider="target">
+                                <rect key="frame" x="40" y="75" width="295" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new Task" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eno-ri-4t7">
+                                        <rect key="frame" x="30" y="25" width="235" height="38.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doC-cz-A1a">
+                                        <rect key="frame" x="30" y="68.5" width="235" height="33"/>
+                                        <color key="tintColor" red="0.43529411764705883" green="0.45098039215686275" blue="0.47058823529411764" alpha="0.029999999999999999" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" id="kKp-2Z-B3P"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                        <color key="textColor" red="0.43529411764705883" green="0.45098039215686275" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bg7-CH-SlU" customClass="RoundedButton" customModule="SuperAwesomeTodoApp" customModuleProvider="target">
+                                        <rect key="frame" x="165" y="225" width="100" height="50"/>
+                                        <color key="backgroundColor" red="0.3529411764705882" green="0.72941176470588232" blue="0.38823529411764707" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="K68-3f-iTc"/>
+                                            <constraint firstAttribute="height" constant="50" id="cJ6-Or-x6i"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                        <state key="normal" title="OK">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRaduis">
+                                                <real key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDi-dA-QyN" customClass="RoundedButton" customModule="SuperAwesomeTodoApp" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="225" width="100" height="50"/>
+                                        <color key="backgroundColor" red="0.91346961260000004" green="0.3393483162" blue="0.25484642390000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="0WK-DK-1D6"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="BgK-HP-MhR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRaduis">
+                                                <real key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onCancel:" destination="9bb-kv-RfU" eventType="touchUpInside" id="Oxn-Fe-FkU"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lks-uu-0v6">
+                                        <rect key="frame" x="30" y="109.5" width="235" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Biy-6A-f5p"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="7st-5w-K2k"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="BtN-xN-OiT"/>
+                                    <constraint firstAttribute="bottom" secondItem="NDi-dA-QyN" secondAttribute="bottom" constant="25" id="ET7-4B-59E"/>
+                                    <constraint firstAttribute="trailing" secondItem="Eno-ri-4t7" secondAttribute="trailing" constant="30" id="F6B-5k-Dco"/>
+                                    <constraint firstItem="doC-cz-A1a" firstAttribute="trailing" secondItem="Eno-ri-4t7" secondAttribute="trailing" id="GU8-Oz-SDd"/>
+                                    <constraint firstItem="doC-cz-A1a" firstAttribute="leading" secondItem="Eno-ri-4t7" secondAttribute="leading" id="KGp-ok-0Zy"/>
+                                    <constraint firstAttribute="bottom" secondItem="bg7-CH-SlU" secondAttribute="bottom" constant="25" id="Mg8-Zt-TQp"/>
+                                    <constraint firstItem="doC-cz-A1a" firstAttribute="top" secondItem="Eno-ri-4t7" secondAttribute="bottom" constant="5" id="Q6M-os-dZD"/>
+                                    <constraint firstAttribute="trailing" secondItem="bg7-CH-SlU" secondAttribute="trailing" constant="30" id="S8V-l3-668"/>
+                                    <constraint firstItem="Eno-ri-4t7" firstAttribute="top" secondItem="mSg-jo-O3Y" secondAttribute="top" constant="25" id="ZSm-Jg-z9j"/>
+                                    <constraint firstItem="lks-uu-0v6" firstAttribute="top" secondItem="doC-cz-A1a" secondAttribute="bottom" constant="8" id="cBa-Mx-UfN"/>
+                                    <constraint firstItem="lks-uu-0v6" firstAttribute="trailing" secondItem="doC-cz-A1a" secondAttribute="trailing" id="d4w-h0-8dl"/>
+                                    <constraint firstItem="Eno-ri-4t7" firstAttribute="leading" secondItem="mSg-jo-O3Y" secondAttribute="leading" constant="30" id="hd8-pl-3X8"/>
+                                    <constraint firstItem="lks-uu-0v6" firstAttribute="leading" secondItem="doC-cz-A1a" secondAttribute="leading" id="mBk-cX-6fF"/>
+                                    <constraint firstItem="NDi-dA-QyN" firstAttribute="leading" secondItem="mSg-jo-O3Y" secondAttribute="leading" constant="30" id="os0-Jd-0ST"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JDV-Mx-0VH"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.054928837990274232" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="mSg-jo-O3Y" firstAttribute="top" secondItem="JDV-Mx-0VH" secondAttribute="top" constant="75" id="8Zu-5T-Lsz"/>
+                            <constraint firstItem="JDV-Mx-0VH" firstAttribute="trailing" secondItem="mSg-jo-O3Y" secondAttribute="trailing" constant="40" id="ZYW-ut-tVF"/>
+                            <constraint firstItem="mSg-jo-O3Y" firstAttribute="leading" secondItem="JDV-Mx-0VH" secondAttribute="leading" constant="40" id="iWq-XY-W3g"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l2G-M5-K04" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="208.69565217391306" y="77.008928571428569"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="NDi-dA-QyN">
+            <size key="intrinsicContentSize" width="63" height="40"/>
+        </designable>
+        <designable name="bg7-CH-SlU">
+            <size key="intrinsicContentSize" width="31" height="40"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

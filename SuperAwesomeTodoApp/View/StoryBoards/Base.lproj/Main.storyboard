@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -12,7 +13,7 @@
         <!--Task Controller View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TaskControllerViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TaskControllerViewController" customModule="SuperAwesomeTodoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,11 +27,29 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hxr-cf-t0u">
+                                        <rect key="frame" x="340" y="82" width="44" height="39"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="1WE-uy-6gA"/>
+                                            <constraint firstAttribute="height" constant="40" id="kMx-Y6-Ph7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="41"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <imageReference key="backgroundImage" image="plus.circle" catalog="system" symbolScale="medium"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addTaskOnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KWO-SG-ypr"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Sqq-BY-WHl" secondAttribute="trailing" constant="20" symbolic="YES" id="Co1-uX-4TD"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hxr-cf-t0u" secondAttribute="trailing" constant="30" id="2Ah-ue-btH"/>
+                                    <constraint firstItem="Hxr-cf-t0u" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Sqq-BY-WHl" secondAttribute="trailing" constant="8" symbolic="YES" id="ETe-A9-QE7"/>
                                     <constraint firstItem="Sqq-BY-WHl" firstAttribute="leading" secondItem="f6B-HQ-5gd" secondAttribute="leading" constant="30" id="EoV-Vw-LWM"/>
+                                    <constraint firstItem="Hxr-cf-t0u" firstAttribute="centerY" secondItem="Sqq-BY-WHl" secondAttribute="centerY" id="XfZ-MQ-iW7"/>
                                     <constraint firstAttribute="height" constant="150" id="c9s-Jz-SwE"/>
                                     <constraint firstAttribute="bottom" secondItem="Sqq-BY-WHl" secondAttribute="bottom" constant="30" id="tBx-qx-A3x"/>
                                 </constraints>
@@ -48,7 +67,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="OoP-xu-baA" customClass="TaskCollectionCell" customModule="SuperAwesomeTodoApp" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="taskCollectoinViewCell" id="OoP-xu-baA" customClass="TaskCollectionCell" customModule="SuperAwesomeTodoApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="-1.5" width="187" height="243"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="J0y-GU-Gjc">
@@ -120,6 +139,7 @@
     </scenes>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
