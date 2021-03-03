@@ -23,6 +23,7 @@
 		07AFE30025ECB85D00EB9C8F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AFE2FF25ECB85D00EB9C8F /* StringExtension.swift */; };
 		07EEA06A25EAB19B0039125D /* TaskControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEA06925EAB19B0039125D /* TaskControllerViewController.swift */; };
 		07EEA06F25EAB47F0039125D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEA06E25EAB47F0039125D /* Constants.swift */; };
+		07FE1EAA25EF30D000CBC059 /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FE1EA925EF30D000CBC059 /* textField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		07AFE2FF25ECB85D00EB9C8F /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		07EEA06925EAB19B0039125D /* TaskControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskControllerViewController.swift; sourceTree = "<group>"; };
 		07EEA06E25EAB47F0039125D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		07FE1EA925EF30D000CBC059 /* textField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				072384B325EA0FCB008818F8 /* Header.swift */,
 				072384B625EA12DF008818F8 /* TaskCollectionCell.swift */,
 				0700C2B825EDF09A0094DA7F /* RoundedButton.swift */,
+				07FE1EA925EF30D000CBC059 /* textField.swift */,
 			);
 			path = CustomClases;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				072384A825E9E77E008818F8 /* Card.swift in Sources */,
 				07AFE30025ECB85D00EB9C8F /* StringExtension.swift in Sources */,
 				072384B425EA0FCB008818F8 /* Header.swift in Sources */,
+				07FE1EAA25EF30D000CBC059 /* textField.swift in Sources */,
 				073865D925E7537F003B33F3 /* AppDelegate.swift in Sources */,
 				07AFE2FD25ECB44D00EB9C8F /* DateExtension.swift in Sources */,
 				07EEA06A25EAB19B0039125D /* TaskControllerViewController.swift in Sources */,

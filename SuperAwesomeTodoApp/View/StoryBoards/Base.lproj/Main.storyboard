@@ -28,7 +28,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hxr-cf-t0u">
-                                        <rect key="frame" x="340" y="82" width="44" height="39"/>
+                                        <rect key="frame" x="340" y="79.5" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="1WE-uy-6gA"/>
                                             <constraint firstAttribute="height" constant="40" id="kMx-Y6-Ph7"/>
@@ -37,7 +37,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <imageReference key="backgroundImage" image="plus.circle" catalog="system" symbolScale="medium"/>
+                                            <imageReference key="backgroundImage" image="plus.circle" catalog="system" symbolScale="large" renderingMode="template"/>
                                         </state>
                                         <connections>
                                             <action selector="addTaskOnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KWO-SG-ypr"/>

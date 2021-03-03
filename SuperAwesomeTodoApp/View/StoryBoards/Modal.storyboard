@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9bb-kv-RfU">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,20 +13,20 @@
             <objects>
                 <viewController storyboardIdentifier="AddTaskModal" id="9bb-kv-RfU" customClass="AddTaskModal" customModule="SuperAwesomeTodoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pgL-3o-9J6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mSg-jo-O3Y" customClass="Card" customModule="SuperAwesomeTodoApp" customModuleProvider="target">
-                                <rect key="frame" x="40" y="75" width="295" height="300"/>
+                                <rect key="frame" x="40" y="119" width="334" height="300"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new Task" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eno-ri-4t7">
-                                        <rect key="frame" x="30" y="25" width="235" height="38.5"/>
+                                        <rect key="frame" x="30" y="25.000000000000004" width="274" height="38.333333333333343"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doC-cz-A1a">
-                                        <rect key="frame" x="30" y="68.5" width="235" height="33"/>
+                                        <rect key="frame" x="30" y="68.333333333333343" width="274" height="33"/>
                                         <color key="tintColor" red="0.43529411764705883" green="0.45098039215686275" blue="0.47058823529411764" alpha="0.029999999999999999" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="33" id="kKp-2Z-B3P"/>
@@ -36,7 +36,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bg7-CH-SlU" customClass="RoundedButton" customModule="SuperAwesomeTodoApp" customModuleProvider="target">
-                                        <rect key="frame" x="165" y="225" width="100" height="50"/>
+                                        <rect key="frame" x="204" y="225" width="100" height="50"/>
                                         <color key="backgroundColor" red="0.3529411764705882" green="0.72941176470588232" blue="0.38823529411764707" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="K68-3f-iTc"/>
@@ -72,10 +72,18 @@
                                             <action selector="onCancel:" destination="9bb-kv-RfU" eventType="touchUpInside" id="Oxn-Fe-FkU"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lks-uu-0v6">
-                                        <rect key="frame" x="30" y="109.5" width="235" height="40"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lks-uu-0v6" customClass="textField" customModule="SuperAwesomeTodoApp" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="109.33333333333334" width="274" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Biy-6A-f5p"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aBa-dD-Omu" customClass="textField" customModule="SuperAwesomeTodoApp" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="157.33333333333331" width="274" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="07b-dG-M9V"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -95,9 +103,12 @@
                                     <constraint firstItem="Eno-ri-4t7" firstAttribute="top" secondItem="mSg-jo-O3Y" secondAttribute="top" constant="25" id="ZSm-Jg-z9j"/>
                                     <constraint firstItem="lks-uu-0v6" firstAttribute="top" secondItem="doC-cz-A1a" secondAttribute="bottom" constant="8" id="cBa-Mx-UfN"/>
                                     <constraint firstItem="lks-uu-0v6" firstAttribute="trailing" secondItem="doC-cz-A1a" secondAttribute="trailing" id="d4w-h0-8dl"/>
+                                    <constraint firstItem="aBa-dD-Omu" firstAttribute="trailing" secondItem="lks-uu-0v6" secondAttribute="trailing" id="dRw-Mq-Bye"/>
                                     <constraint firstItem="Eno-ri-4t7" firstAttribute="leading" secondItem="mSg-jo-O3Y" secondAttribute="leading" constant="30" id="hd8-pl-3X8"/>
                                     <constraint firstItem="lks-uu-0v6" firstAttribute="leading" secondItem="doC-cz-A1a" secondAttribute="leading" id="mBk-cX-6fF"/>
                                     <constraint firstItem="NDi-dA-QyN" firstAttribute="leading" secondItem="mSg-jo-O3Y" secondAttribute="leading" constant="30" id="os0-Jd-0ST"/>
+                                    <constraint firstItem="aBa-dD-Omu" firstAttribute="top" secondItem="lks-uu-0v6" secondAttribute="bottom" constant="8" id="w03-9u-u32"/>
+                                    <constraint firstItem="aBa-dD-Omu" firstAttribute="leading" secondItem="lks-uu-0v6" secondAttribute="leading" id="xsd-tb-PMF"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -119,8 +130,14 @@
         <designable name="NDi-dA-QyN">
             <size key="intrinsicContentSize" width="63" height="40"/>
         </designable>
+        <designable name="aBa-dD-Omu">
+            <size key="intrinsicContentSize" width="62" height="34"/>
+        </designable>
         <designable name="bg7-CH-SlU">
             <size key="intrinsicContentSize" width="31" height="40"/>
+        </designable>
+        <designable name="lks-uu-0v6">
+            <size key="intrinsicContentSize" width="62" height="34"/>
         </designable>
     </designables>
     <resources>
