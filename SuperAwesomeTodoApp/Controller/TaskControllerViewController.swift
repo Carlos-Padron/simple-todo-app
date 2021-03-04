@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol TaskControllerDelegate:class {
+    func didSaveTask(task: TaskModel)
+}
+
+
 class TaskControllerViewController: UIViewController {
 
     //Variables
@@ -22,6 +27,7 @@ class TaskControllerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
+        fetchTodaysTaks()
         // Do any additional setup after loading the view.
     }
     
@@ -34,15 +40,21 @@ class TaskControllerViewController: UIViewController {
         
     }
     
+    private func fetchTodaysTaks(){
+        todaysTasks = TaskManager.shared.fetchTodaysTasks()
+    }
+    
     @IBAction func addTaskOnTap(_ sender: UIButton) {
         print("Tapped")
         
         let storyboard = UIStoryboard(name: "Modal", bundle: nil)
-        let modal = storyboard.instantiateViewController(withIdentifier: "AddTaskModal")
-        modal.modalTransitionStyle = .crossDissolve
-        modal.modalPresentationStyle = .overFullScreen
-        self.present(modal, animated: true)
-        
+        if let modal = storyboard.instantiateViewController(withIdentifier: "AddTaskModal") as? AddTaskModal {
+            modal.modalTransitionStyle   = .crossDissolve
+            modal.modalPresentationStyle = .overFullScreen
+            modal.taskControllerDelegate = self
+            
+            self.present(modal, animated: true)
+        }
         
     }
     
@@ -50,8 +62,6 @@ class TaskControllerViewController: UIViewController {
 }
 
 extension TaskControllerViewController: UICollectionViewDelegate, UICollectionViewDataSource{
-    
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return todaysTasks.count
@@ -74,6 +84,16 @@ extension TaskControllerViewController: UICollectionViewDelegate, UICollectionVi
             return cell
         }
         return UICollectionViewCell()
+    }
+    
+    
+    
+    
+}
+
+extension TaskControllerViewController: TaskControllerDelegate{
+    func didSaveTask(task: TaskModel) {
+        print("task received: \(task)")
     }
     
     

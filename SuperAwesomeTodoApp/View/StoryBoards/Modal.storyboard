@@ -51,6 +51,9 @@
                                                 <real key="value" value="14"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onSave:" destination="9bb-kv-RfU" eventType="touchUpInside" id="ZRy-Td-so6"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDi-dA-QyN" customClass="RoundedButton" customModule="SuperAwesomeTodoApp" customModuleProvider="target">
                                         <rect key="frame" x="30" y="225" width="100" height="50"/>
@@ -80,14 +83,14 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aBa-dD-Omu" customClass="textField" customModule="SuperAwesomeTodoApp" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="157.33333333333331" width="274" height="40"/>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="Mc4-o1-REZ">
+                                        <rect key="frame" x="30" y="164.33333333333331" width="274" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <color key="tintColor" systemColor="systemIndigoColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="07b-dG-M9V"/>
+                                            <constraint firstAttribute="height" constant="40" id="ZS4-oJ-qqe"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    </datePicker>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -100,15 +103,15 @@
                                     <constraint firstAttribute="bottom" secondItem="bg7-CH-SlU" secondAttribute="bottom" constant="25" id="Mg8-Zt-TQp"/>
                                     <constraint firstItem="doC-cz-A1a" firstAttribute="top" secondItem="Eno-ri-4t7" secondAttribute="bottom" constant="5" id="Q6M-os-dZD"/>
                                     <constraint firstAttribute="trailing" secondItem="bg7-CH-SlU" secondAttribute="trailing" constant="30" id="S8V-l3-668"/>
+                                    <constraint firstItem="Mc4-o1-REZ" firstAttribute="leading" secondItem="lks-uu-0v6" secondAttribute="leading" id="UZj-7H-Ne8"/>
                                     <constraint firstItem="Eno-ri-4t7" firstAttribute="top" secondItem="mSg-jo-O3Y" secondAttribute="top" constant="25" id="ZSm-Jg-z9j"/>
+                                    <constraint firstItem="Mc4-o1-REZ" firstAttribute="trailing" secondItem="lks-uu-0v6" secondAttribute="trailing" id="Zgh-wJ-aqe"/>
                                     <constraint firstItem="lks-uu-0v6" firstAttribute="top" secondItem="doC-cz-A1a" secondAttribute="bottom" constant="8" id="cBa-Mx-UfN"/>
                                     <constraint firstItem="lks-uu-0v6" firstAttribute="trailing" secondItem="doC-cz-A1a" secondAttribute="trailing" id="d4w-h0-8dl"/>
-                                    <constraint firstItem="aBa-dD-Omu" firstAttribute="trailing" secondItem="lks-uu-0v6" secondAttribute="trailing" id="dRw-Mq-Bye"/>
                                     <constraint firstItem="Eno-ri-4t7" firstAttribute="leading" secondItem="mSg-jo-O3Y" secondAttribute="leading" constant="30" id="hd8-pl-3X8"/>
                                     <constraint firstItem="lks-uu-0v6" firstAttribute="leading" secondItem="doC-cz-A1a" secondAttribute="leading" id="mBk-cX-6fF"/>
                                     <constraint firstItem="NDi-dA-QyN" firstAttribute="leading" secondItem="mSg-jo-O3Y" secondAttribute="leading" constant="30" id="os0-Jd-0ST"/>
-                                    <constraint firstItem="aBa-dD-Omu" firstAttribute="top" secondItem="lks-uu-0v6" secondAttribute="bottom" constant="8" id="w03-9u-u32"/>
-                                    <constraint firstItem="aBa-dD-Omu" firstAttribute="leading" secondItem="lks-uu-0v6" secondAttribute="leading" id="xsd-tb-PMF"/>
+                                    <constraint firstItem="Mc4-o1-REZ" firstAttribute="top" secondItem="lks-uu-0v6" secondAttribute="bottom" constant="15" id="vCl-ad-g1l"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -120,6 +123,10 @@
                             <constraint firstItem="mSg-jo-O3Y" firstAttribute="leading" secondItem="JDV-Mx-0VH" secondAttribute="leading" constant="40" id="iWq-XY-W3g"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="Mc4-o1-REZ" id="Ezv-Eg-Bv4"/>
+                        <outlet property="taskTextField" destination="lks-uu-0v6" id="SkT-xt-bWO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2G-M5-K04" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,19 +137,22 @@
         <designable name="NDi-dA-QyN">
             <size key="intrinsicContentSize" width="63" height="40"/>
         </designable>
-        <designable name="aBa-dD-Omu">
-            <size key="intrinsicContentSize" width="62" height="34"/>
-        </designable>
         <designable name="bg7-CH-SlU">
             <size key="intrinsicContentSize" width="31" height="40"/>
         </designable>
         <designable name="lks-uu-0v6">
-            <size key="intrinsicContentSize" width="62" height="34"/>
+            <size key="intrinsicContentSize" width="32" height="34"/>
         </designable>
     </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

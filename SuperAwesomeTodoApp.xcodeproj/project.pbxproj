@@ -10,6 +10,8 @@
 		0700C2AD25EDE9F60094DA7F /* AddTaskModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700C2AC25EDE9F60094DA7F /* AddTaskModal.swift */; };
 		0700C2B625EDEC6E0094DA7F /* Modal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0700C2B525EDEC6E0094DA7F /* Modal.storyboard */; };
 		0700C2B925EDF09A0094DA7F /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700C2B825EDF09A0094DA7F /* RoundedButton.swift */; };
+		071F668B25F0823000250008 /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071F668A25F0823000250008 /* TaskService.swift */; };
+		071F668E25F0966900250008 /* TaskTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071F668D25F0966900250008 /* TaskTableCell.swift */; };
 		072384A525E9E3FA008818F8 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072384A425E9E3FA008818F8 /* TaskModel.swift */; };
 		072384A825E9E77E008818F8 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072384A725E9E77E008818F8 /* Card.swift */; };
 		072384B425EA0FCB008818F8 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072384B325EA0FCB008818F8 /* Header.swift */; };
@@ -30,6 +32,8 @@
 		0700C2AC25EDE9F60094DA7F /* AddTaskModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskModal.swift; sourceTree = "<group>"; };
 		0700C2B525EDEC6E0094DA7F /* Modal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Modal.storyboard; sourceTree = "<group>"; };
 		0700C2B825EDF09A0094DA7F /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		071F668A25F0823000250008 /* TaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
+		071F668D25F0966900250008 /* TaskTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableCell.swift; sourceTree = "<group>"; };
 		072384A425E9E3FA008818F8 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		072384A725E9E77E008818F8 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		072384B325EA0FCB008818F8 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
@@ -67,6 +71,7 @@
 				072384B625EA12DF008818F8 /* TaskCollectionCell.swift */,
 				0700C2B825EDF09A0094DA7F /* RoundedButton.swift */,
 				07FE1EA925EF30D000CBC059 /* textField.swift */,
+				071F668D25F0966900250008 /* TaskTableCell.swift */,
 			);
 			path = CustomClases;
 			sourceTree = "<group>";
@@ -86,6 +91,14 @@
 				072384A425E9E3FA008818F8 /* TaskModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		071F668925F0821400250008 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				071F668A25F0823000250008 /* TaskService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		072384A225E9E3D2008818F8 /* View */ = {
@@ -150,6 +163,7 @@
 		07EEA06C25EAB4410039125D /* Uitls */ = {
 			isa = PBXGroup;
 			children = (
+				071F668925F0821400250008 /* Services */,
 				07AFE2FB25ECB42A00EB9C8F /* Extensions */,
 				07EEA06D25EAB4510039125D /* Constants */,
 			);
@@ -244,7 +258,9 @@
 				07AFE2FD25ECB44D00EB9C8F /* DateExtension.swift in Sources */,
 				07EEA06A25EAB19B0039125D /* TaskControllerViewController.swift in Sources */,
 				0700C2B925EDF09A0094DA7F /* RoundedButton.swift in Sources */,
+				071F668E25F0966900250008 /* TaskTableCell.swift in Sources */,
 				072384A525E9E3FA008818F8 /* TaskModel.swift in Sources */,
+				071F668B25F0823000250008 /* TaskService.swift in Sources */,
 				0700C2AD25EDE9F60094DA7F /* AddTaskModal.swift in Sources */,
 				073865DB25E7537F003B33F3 /* SceneDelegate.swift in Sources */,
 				07EEA06F25EAB47F0039125D /* Constants.swift in Sources */,
