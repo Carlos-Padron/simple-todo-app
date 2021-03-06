@@ -134,7 +134,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEI-Eq-Okv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEI-Eq-Okv">
                                 <rect key="frame" x="30" y="426" width="354" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="87S-c7-6qf"/>
@@ -147,39 +147,48 @@
                                 <rect key="frame" x="30" y="479" width="354" height="383"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TaskTableCell" id="dJK-W1-qHX" customClass="TaskTableCell" customModule="SuperAwesomeTodoApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TaskTableCell" rowHeight="110" id="dJK-W1-qHX" customClass="TaskTableCell" customModule="SuperAwesomeTodoApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="354" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dJK-W1-qHX" id="Dfg-3b-xsh" customClass="Card" customModule="SuperAwesomeTodoApp" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dJK-W1-qHX" id="Dfg-3b-xsh">
                                             <rect key="frame" x="0.0" y="0.0" width="354" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M4c-sG-UKg" customClass="Card" customModule="SuperAwesomeTodoApp" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="10" width="334" height="90"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tri-8J-qfj">
-                                                    <rect key="frame" x="57" y="11" width="257" height="50"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="u9X-fP-eAT"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="57" y="31" width="125.5" height="34.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="25"/>
                                                     <color key="textColor" red="0.43529411764705883" green="0.45098039215686275" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agi-yr-gGR">
-                                                    <rect key="frame" x="57" y="67" width="257" height="32"/>
+                                                    <rect key="frame" x="57" y="71.5" width="44" height="27.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                                     <color key="textColor" red="0.43529411759999997" green="0.45098039220000002" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="tri-8J-qfj" secondAttribute="trailing" constant="20" id="8Hi-TL-uqk"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Agi-yr-gGR" secondAttribute="trailing" constant="20" id="Bg1-YQ-orF"/>
-                                                <constraint firstItem="Agi-yr-gGR" firstAttribute="leading" secondItem="Dfg-3b-xsh" secondAttribute="leadingMargin" constant="37" id="K97-Ds-58w"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Agi-yr-gGR" secondAttribute="bottom" id="Mk1-fl-NEn"/>
-                                                <constraint firstItem="tri-8J-qfj" firstAttribute="top" secondItem="Dfg-3b-xsh" secondAttribute="topMargin" id="OYP-fV-GFa"/>
-                                                <constraint firstItem="tri-8J-qfj" firstAttribute="leading" secondItem="Dfg-3b-xsh" secondAttribute="leadingMargin" constant="37" id="eKK-pJ-R6D"/>
-                                                <constraint firstItem="Agi-yr-gGR" firstAttribute="top" secondItem="tri-8J-qfj" secondAttribute="bottom" constant="6" id="gez-7w-qax"/>
+                                                <constraint firstItem="Agi-yr-gGR" firstAttribute="top" secondItem="tri-8J-qfj" secondAttribute="bottom" constant="6" id="5my-dB-fQK"/>
+                                                <constraint firstItem="tri-8J-qfj" firstAttribute="top" secondItem="Dfg-3b-xsh" secondAttribute="topMargin" constant="20" id="8jK-uH-aIs"/>
+                                                <constraint firstItem="tri-8J-qfj" firstAttribute="leading" secondItem="Dfg-3b-xsh" secondAttribute="leadingMargin" constant="37" id="9aa-9a-zPt"/>
+                                                <constraint firstAttribute="bottom" secondItem="M4c-sG-UKg" secondAttribute="bottom" constant="10" id="Afz-vk-QPr"/>
+                                                <constraint firstItem="M4c-sG-UKg" firstAttribute="leading" secondItem="Dfg-3b-xsh" secondAttribute="leading" constant="10" id="IAE-0Y-V75"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="tri-8J-qfj" secondAttribute="trailing" id="NOb-Ce-UJy"/>
+                                                <constraint firstItem="Agi-yr-gGR" firstAttribute="bottom" secondItem="Dfg-3b-xsh" secondAttribute="bottomMargin" id="bKc-E7-e2J"/>
+                                                <constraint firstItem="M4c-sG-UKg" firstAttribute="top" secondItem="Dfg-3b-xsh" secondAttribute="top" constant="10" id="nHR-Wa-5kH"/>
+                                                <constraint firstAttribute="trailing" secondItem="M4c-sG-UKg" secondAttribute="trailing" constant="10" id="pD8-Ae-rFK"/>
+                                                <constraint firstItem="Agi-yr-gGR" firstAttribute="leading" secondItem="Dfg-3b-xsh" secondAttribute="leadingMargin" constant="37" id="vll-P2-uKD"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Agi-yr-gGR" secondAttribute="trailing" id="zoJ-hv-ghf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="Agi-yr-gGR" id="SUl-cK-K0C"/>
+                                            <outlet property="taskLabel" destination="tri-8J-qfj" id="fE2-4q-ikW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -204,6 +213,7 @@
                     </view>
                     <connections>
                         <outlet property="TasksCollectionView" destination="pd4-aQ-kUR" id="apg-Qh-Zkn"/>
+                        <outlet property="TasksTableView" destination="FZl-6V-dTL" id="NdN-24-Hb6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

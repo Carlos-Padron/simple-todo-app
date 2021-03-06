@@ -22,12 +22,15 @@ class TaskControllerViewController: UIViewController {
     
     //Outlets
     @IBOutlet weak var TasksCollectionView: UICollectionView!
+    @IBOutlet weak var TasksTableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
+        configureTableView()
         fetchTodaysTaks()
+        fetchUpcomingTaks()
         // Do any additional setup after loading the view.
     }
     
@@ -37,11 +40,17 @@ class TaskControllerViewController: UIViewController {
     }
     
     private func configureTableView(){
-        
+        TasksTableView.delegate   = self
+        TasksTableView.dataSource = self
     }
     
     private func fetchTodaysTaks(){
-        todaysTasks = TaskManager.shared.fetchTodaysTasks()
+        todaysTasks   = TaskManager.shared.fetchTodaysTasks()
+        upcomingTasks = TaskManager.shared.fetchTodaysTasks()
+    }
+    
+    private func fetchUpcomingTaks(){
+        upcomingTasks = TaskManager.shared.fetchTodaysTasks()
     }
     
     @IBAction func addTaskOnTap(_ sender: UIButton) {
@@ -90,6 +99,25 @@ extension TaskControllerViewController: UICollectionViewDelegate, UICollectionVi
     
     
 }
+
+extension TaskControllerViewController: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return upcomingTasks.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TASK_TABLE_VIEW_CELL_ID, for: indexPath) as? TaskTableCell{
+            print(indexPath.row)
+            cell.configure(task: upcomingTasks[indexPath.row])
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    
+}
+
 
 extension TaskControllerViewController: TaskControllerDelegate{
     func didSaveTask(task: TaskModel) {

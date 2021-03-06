@@ -9,6 +9,8 @@ import UIKit
 
 class TaskTableCell: UITableViewCell {
 
+    @IBOutlet weak var taskLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     
     
@@ -23,9 +25,10 @@ class TaskTableCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(index: Int){
+    func configure(task: TaskModel){
         
-        
+        taskLabel.text = task.name
+        dateLabel.text = task.date.convertToStringWithDateFormat(format: "dd/MM/yyyy")
         
         
         let leftBorder = CALayer()
