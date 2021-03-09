@@ -15,6 +15,20 @@ class TaskManager {
         TaskModel(name: "1", date: Date()),
         TaskModel(name: "2", date: Date()),
         TaskModel(name: "3", date: Date()),
+        TaskModel(name: "1", date: Date()),
+        TaskModel(name: "2", date: Date()),
+        TaskModel(name: "3", date: Date()),
+        TaskModel(name: "1", date: Date()),
+        TaskModel(name: "2", date: Date()),
+        TaskModel(name: "3", date: Date()),   TaskModel(name: "1", date: Date()),
+        TaskModel(name: "2", date: Date()),
+        TaskModel(name: "3", date: Date()),
+        TaskModel(name: "1", date: Date()),
+        TaskModel(name: "2", date: Date()),
+        TaskModel(name: "3", date: Date()),
+        TaskModel(name: "1", date: Date()),
+        TaskModel(name: "2", date: Date()),
+        TaskModel(name: "3", date: Date()),
     ]
     
     

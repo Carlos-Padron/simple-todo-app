@@ -81,7 +81,7 @@ extension TaskControllerViewController: UICollectionViewDelegate, UICollectionVi
             
             let totalColors = Constants.colorArray.count;
             
-            if indexPath.row % totalColors == 0 && indexPath.row > 0 {
+            if (indexPath.row % totalColors == 0 && indexPath.row > 0) || totalColors == colorIndex {
                 colorIndex = 0
                 cell.configure(task: todaysTasks[indexPath.row], colorIndex: colorIndex)
             }else{
@@ -109,8 +109,25 @@ extension TaskControllerViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TASK_TABLE_VIEW_CELL_ID, for: indexPath) as? TaskTableCell{
             print(indexPath.row)
-            cell.configure(task: upcomingTasks[indexPath.row])
+            
+            
+            let totalColors = Constants.colorArray.count;
+            
+            if (indexPath.row % totalColors == 0 && indexPath.row > 0) || totalColors == colorIndex {
+                colorIndex = 0
+                cell.configure(task: upcomingTasks[indexPath.row], colorIndex: colorIndex)
+               
+            }else{
+                cell.configure(task: upcomingTasks[indexPath.row], colorIndex: colorIndex)
+            }
+            
+            colorIndex += 1
+
             return cell
+            
+            
+            
+            
         }
         return UITableViewCell()
     }

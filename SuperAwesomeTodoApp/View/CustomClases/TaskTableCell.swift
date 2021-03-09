@@ -29,22 +29,23 @@ class TaskTableCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(task: TaskModel){
+    func configure(task: TaskModel, colorIndex: Int){
         
         taskLabel.text = task.name
         dateLabel.text = task.date.convertToStringWithDateFormat(format: "dd/MM/yyyy")
         
+        taskLabel.font = UIFont(name: "AvenirNext-Bold", size: 23)
+        dateLabel.font = UIFont(name: "AvenirNext-Medium", size: 20)
         
-//        let leftBorder = CALayer()
-//        leftBorder.frame =  CGRect(x: 0, y: 0, width: 15, height: self.bounds.height )
-//        leftBorder.backgroundColor = UIColor.red.cgColor
-//        Card.layer.addSublayer(leftBorder)
-//        Card.clipsToBounds = true
-//        
-//        Card.layer.cornerRadius = 20
-//        Card.layer.shadowColor   = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1.00).cgColor
-//        Card.layer.shadowRadius  = 5
-//        Card.layer.shadowOpacity = 1
+        taskLabel.textColor = Constants.colorArray[colorIndex]
+        dateLabel.textColor = Constants.colorArray[colorIndex]
+        
+        taskLabel.lineBreakMode = .byTruncatingTail
+        dateLabel.lineBreakMode = .byTruncatingTail
+        
+        leftBorder.backgroundColor = Constants.colorArray[colorIndex].cgColor
+
+        
     }
     
     func layoutUI(){
@@ -53,22 +54,16 @@ class TaskTableCell: UITableViewCell {
         taskLabel.translatesAutoresizingMaskIntoConstraints = false
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        taskLabel.font = UIFont(name: "Avenir-Next-Bold", size: 25)
-        dateLabel.font = UIFont(name: "Avenir-Next-Medium", size: 20)
-        
         addSubview(baseView)
-        
-        
         baseView.layer.cornerRadius = 20
         baseView.addSubview(taskLabel)
         baseView.addSubview(dateLabel)
         
         
-        leftBorder.frame =  CGRect(x: 0, y: 0, width: 15, height: self.bounds.height )
+        leftBorder.frame =  CGRect(x: 0, y: 0, width: 15, height: Card.bounds.height )
         leftBorder.backgroundColor = UIColor.red.cgColor
         baseView.layer.addSublayer(leftBorder)
         baseView.clipsToBounds = true
-        
         
         
         NSLayoutConstraint.activate([
@@ -77,7 +72,7 @@ class TaskTableCell: UITableViewCell {
             baseView.leadingAnchor.constraint(equalTo: Card.leadingAnchor),
             baseView.trailingAnchor.constraint(equalTo: Card.trailingAnchor),
             
-            taskLabel.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 5),
+            taskLabel.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 10),
             taskLabel.leadingAnchor.constraint(equalTo: baseView.leadingAnchor, constant: 35),
             taskLabel.trailingAnchor.constraint(equalTo: baseView.trailingAnchor, constant: -10),
             taskLabel.bottomAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: -5),
