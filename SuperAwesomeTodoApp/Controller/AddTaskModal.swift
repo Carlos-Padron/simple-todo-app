@@ -45,9 +45,23 @@ class AddTaskModal: UIViewController {
         taskTextField.layer.borderWidth  = 0
         
         let newTask = TaskModel(name: taskName, date: datePicker.date)
-        print(newTask)
-        taskControllerDelegate.didSaveTask(task: newTask)
-        dismiss(animated: true)
+        TaskManager.shared.saveTask(task: newTask) { [weak self] (error) in
+            guard let self = self else { return }
+            switch error{
+            case true:
+                self.taskControllerDelegate.didSaveTask(task: newTask)
+                self.dismiss(animated: true)
+            case false:
+                let alert = UIAlertController(title: "Oops", message: "Something went wrong", preferredStyle: .alert)
+                let alertAction = UIAlertAction(title: "Ok", style: .default) { (action) in
+                    self.dismiss(animated: true)
+                }
+                
+                alert.addAction(alertAction)
+                self.present(alert, animated: true)
+            }
+        }
+        
     }
     
     

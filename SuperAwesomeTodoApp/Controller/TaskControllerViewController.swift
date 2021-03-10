@@ -124,12 +124,30 @@ extension TaskControllerViewController: UITableViewDelegate, UITableViewDataSour
             colorIndex += 1
 
             return cell
-            
-            
-            
-            
         }
         return UITableViewCell()
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        TaskManager.shared.setCompletedOrUncompleted(index: indexPath.row){ [weak self] task in
+            guard let self =  self else{ return }
+            self.upcomingTasks[indexPath.row] = task
+            tableView.beginUpdates()
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+            tableView.endUpdates()
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        TaskManager.shared.setCompletedOrUncompleted(index: indexPath.row){ [weak self] task in
+            guard let self =  self else{ return }
+            self.upcomingTasks[indexPath.row] = task
+            tableView.beginUpdates()
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+            tableView.endUpdates()
+        }
     }
     
     
@@ -138,7 +156,14 @@ extension TaskControllerViewController: UITableViewDelegate, UITableViewDataSour
 
 extension TaskControllerViewController: TaskControllerDelegate{
     func didSaveTask(task: TaskModel) {
-        print("task received: \(task)")
+        if task.date == Date() {
+            todaysTasks.insert(contentsOf: [task], at: 0)
+            print(todaysTasks)
+            self.TasksCollectionView.reloadData()
+        }else{
+            todaysTasks.insert(contentsOf: [task], at: 0)
+            self.TasksTableView.reloadData()
+        }
     }
     
     
