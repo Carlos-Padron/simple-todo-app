@@ -18,7 +18,8 @@ class TaskControllerViewController: UIViewController {
     var todaysTasks: [TaskModel]   = []
     var upcomingTasks: [TaskModel] = []
     var colorIndex: Int            = 0
-    
+    let containerView              = UIView()
+    let titleMsg                   = UILabel(frame: .zero)
     
     //Outlets
     @IBOutlet weak var TasksCollectionView: UICollectionView!
@@ -73,6 +74,19 @@ class TaskControllerViewController: UIViewController {
 extension TaskControllerViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if todaysTasks.isEmpty {
+            let noDataLabel: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: TasksCollectionView.bounds.size.width, height: TasksCollectionView.bounds.size.height))
+            noDataLabel.text          = "No data available"
+            noDataLabel.font = UIFont(name: "AvenirNext-Bold", size: 20)
+            noDataLabel.numberOfLines = 3
+            noDataLabel.text = "No tasks for today. Enjoy your day off 🎉"
+            noDataLabel.textAlignment = .center
+            noDataLabel.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+                    
+            TasksCollectionView.backgroundView  = noDataLabel
+        }else{
+            TasksCollectionView.backgroundView  = nil
+        }
         return todaysTasks.count
     }
     
@@ -102,6 +116,23 @@ extension TaskControllerViewController: UICollectionViewDelegate, UICollectionVi
 
 extension TaskControllerViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if upcomingTasks.isEmpty {
+            let noDataLabel: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: TasksTableView.bounds.size.width, height: TasksTableView.bounds.size.height))
+                noDataLabel.text          = "No data available"
+                noDataLabel.font = UIFont(name: "AvenirNext-Bold", size: 20)
+                noDataLabel.numberOfLines = 3
+                noDataLabel.text = "No pending tasks. Please add some tasks ☺️"
+                noDataLabel.textAlignment = .center
+                noDataLabel.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+                    
+                TasksTableView.backgroundView  = noDataLabel
+        }else{
+            TasksTableView.backgroundView  = nil
+        }
+        
+        print("reload")
+        print(upcomingTasks.count)
+
         return upcomingTasks.count
     }
     
@@ -156,12 +187,15 @@ extension TaskControllerViewController: UITableViewDelegate, UITableViewDataSour
 
 extension TaskControllerViewController: TaskControllerDelegate{
     func didSaveTask(task: TaskModel) {
-        if task.date == Date() {
+        let taskDate = task.date.convertToStringWithDateFormat(format: "dd/MM/yyyy")
+        let currentDate =  Date().convertToStringWithDateFormat(format: "dd/MM/yyyy")
+        if taskDate == currentDate {
             todaysTasks.insert(contentsOf: [task], at: 0)
             print(todaysTasks)
             self.TasksCollectionView.reloadData()
         }else{
-            todaysTasks.insert(contentsOf: [task], at: 0)
+            print("se llena tabla de abajo")
+            upcomingTasks.insert(contentsOf: [task], at: 0)
             self.TasksTableView.reloadData()
         }
     }
