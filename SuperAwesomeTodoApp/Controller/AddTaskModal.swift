@@ -44,7 +44,9 @@ class AddTaskModal: UIViewController {
         taskTextField.borderStyle       = .none
         taskTextField.layer.borderWidth  = 0
         
-        let newTask = TaskModel(name: taskName, date: datePicker.date)
+        let colorIndex = Int.random(in: 0..<Constants.colorArray.count)
+        
+        let newTask = TaskModel(name: taskName, date: datePicker.date, color: Constants.colorArray[colorIndex])
         TaskManager.shared.saveTask(task: newTask) { [weak self] (error) in
             guard let self = self else { return }
             switch error{

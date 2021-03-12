@@ -45,11 +45,20 @@ class TaskManager {
     
     
     func fetchTodaysTasks()->[TaskModel] {
-        return tasks
+        
+        let todayTasks = tasks.filter { (TaskModel) -> Bool in
+            return TaskModel.date.convertToStringWithDateFormat(format: "dd/MM/yyyy") == Date().convertToStringWithDateFormat(format: "dd/MM/yyyy")
+        }
+        
+        return todayTasks
     }
     
     func fetchOtherTaks() ->[TaskModel]{
-        return tasks
+        let todayTasks = tasks.filter { (TaskModel) -> Bool in
+            return TaskModel.date.convertToStringWithDateFormat(format: "dd/MM/yyyy") != Date().convertToStringWithDateFormat(format: "dd/MM/yyyy")
+        }
+        
+        return todayTasks
     }
     
     func saveTask(task: TaskModel, completed: @escaping (_ error :Bool)-> Void ){

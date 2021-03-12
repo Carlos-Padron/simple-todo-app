@@ -35,7 +35,7 @@ class TaskTableCell: UITableViewCell {
     }
     
     
-    func configure(task: TaskModel, colorIndex: Int){
+    func configure(task: TaskModel){
         
         print("cell configured")
         
@@ -45,13 +45,13 @@ class TaskTableCell: UITableViewCell {
         taskLabel.font = UIFont(name: "AvenirNext-Bold", size: 23)
         dateLabel.font = UIFont(name: "AvenirNext-Medium", size: 20)
         
-        taskLabel.textColor = Constants.colorArray[colorIndex]
-        dateLabel.textColor = Constants.colorArray[colorIndex]
+        taskLabel.textColor = task.color
+        dateLabel.textColor = task.color
         
         taskLabel.lineBreakMode = .byTruncatingTail
         dateLabel.lineBreakMode = .byTruncatingTail
         
-        leftBorder.backgroundColor = Constants.colorArray[colorIndex].cgColor
+        leftBorder.backgroundColor = task.color.cgColor
         
         print(task.completed)
         

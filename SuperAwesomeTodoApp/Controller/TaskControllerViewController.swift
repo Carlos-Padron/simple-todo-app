@@ -92,18 +92,7 @@ extension TaskControllerViewController: UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.TASK_COLLECTION_VIEW_CELL_ID, for: indexPath) as? TaskCollectionCell{
-            
-            let totalColors = Constants.colorArray.count;
-            
-            if (indexPath.row % totalColors == 0 && indexPath.row > 0) || totalColors == colorIndex {
-                colorIndex = 0
-                cell.configure(task: todaysTasks[indexPath.row], colorIndex: colorIndex)
-            }else{
-                cell.configure(task: todaysTasks[indexPath.row], colorIndex: colorIndex)
-            }
-            
-            colorIndex += 1
-
+            cell.configure(task: todaysTasks[indexPath.row])
             return cell
         }
         return UICollectionViewCell()
@@ -130,30 +119,13 @@ extension TaskControllerViewController: UITableViewDelegate, UITableViewDataSour
             TasksTableView.backgroundView  = nil
         }
         
-        print("reload")
-        print(upcomingTasks.count)
-
         return upcomingTasks.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TASK_TABLE_VIEW_CELL_ID, for: indexPath) as? TaskTableCell{
-            print(indexPath.row)
-            
-            
-            let totalColors = Constants.colorArray.count;
-            
-            if (indexPath.row % totalColors == 0 && indexPath.row > 0) || totalColors == colorIndex {
-                colorIndex = 0
-                cell.configure(task: upcomingTasks[indexPath.row], colorIndex: colorIndex)
-               
-            }else{
-                cell.configure(task: upcomingTasks[indexPath.row], colorIndex: colorIndex)
-            }
-            
-            colorIndex += 1
-
+            cell.configure(task: upcomingTasks[indexPath.row])
             return cell
         }
         return UITableViewCell()

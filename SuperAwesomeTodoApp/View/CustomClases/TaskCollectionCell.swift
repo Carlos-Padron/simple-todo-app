@@ -14,15 +14,15 @@ class TaskCollectionCell: UICollectionViewCell {
     @IBOutlet weak var taskNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    func configure(task: TaskModel, colorIndex: Int){
+    func configure(task: TaskModel){
         taskNameLabel.text        = task.name
-        taskNameLabel.textColor   = Constants.colorArray[colorIndex]
+        taskNameLabel.textColor   = task.color
         
         dateLabel.text            = task.date.convertToStringWithDateFormat(format: "dd/MM/yyyy")
-        dateLabel.textColor       = Constants.colorArray[colorIndex]
+        dateLabel.textColor       = task.color
         
         calendarImgView.image     = UIImage(systemName: "calendar")
-        calendarImgView.tintColor = Constants.colorArray[colorIndex]
+        calendarImgView.tintColor = task.color
     }
     
     
