@@ -98,6 +98,22 @@ extension TaskControllerViewController: UICollectionViewDelegate, UICollectionVi
         return UICollectionViewCell()
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        TaskManager.shared.setCompletedOrUncompleted(index: indexPath.row){ [weak self] task in
+            guard let self =  self else{ return }
+            self.todaysTasks[indexPath.row] = task
+            collectionView.reloadItems(at: [indexPath])
+        }
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        TaskManager.shared.setCompletedOrUncompleted(index: indexPath.row){ [weak self] task in
+            guard let self =  self else{ return }
+            self.todaysTasks[indexPath.row] = task
+            collectionView.reloadItems(at: [indexPath])
+        }
+    }
     
     
     

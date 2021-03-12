@@ -25,15 +25,6 @@ class TaskTableCell: UITableViewCell {
         // Initialization code
     }
     
-    func setTaskAsCompleted(){
-        checkImage.image = UIImage(systemName: "checkmark.circle")
-        checkImage.tintColor = UIColor(red: 0.40, green: 0.83, blue: 0.43, alpha: 1.00)
-    }
-    
-    func setTaskAsUncompleted(){
-        checkImage.image = nil
-    }
-    
     
     func configure(task: TaskModel){
         

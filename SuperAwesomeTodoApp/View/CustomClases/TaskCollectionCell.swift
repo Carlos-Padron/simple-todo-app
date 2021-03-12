@@ -23,7 +23,18 @@ class TaskCollectionCell: UICollectionViewCell {
         
         calendarImgView.image     = UIImage(systemName: "calendar")
         calendarImgView.tintColor = task.color
+        
+        
+        if task.completed {
+            calendarImgView.image = UIImage(systemName: "checkmark.circle")
+            calendarImgView.tintColor = UIColor(red: 0.40, green: 0.83, blue: 0.43, alpha: 1.00)
+        }else{
+            calendarImgView.image     = UIImage(systemName: "calendar")
+            calendarImgView.tintColor = task.color
+        }
     }
+    
+        
     
     
 }
