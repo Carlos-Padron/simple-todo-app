@@ -37,8 +37,10 @@ class TaskControllerViewController: UIViewController {
     
     private func configureCollectionView(){
         TasksCollectionView.delegate = self
-        TasksCollectionView.dataSource = self
+        TasksCollectionView.dataSource = self        
     }
+    
+    
     
     private func configureTableView(){
         TasksTableView.delegate   = self
@@ -71,7 +73,7 @@ class TaskControllerViewController: UIViewController {
   
 }
 
-extension TaskControllerViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+extension TaskControllerViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if todaysTasks.isEmpty {
@@ -116,6 +118,9 @@ extension TaskControllerViewController: UICollectionViewDelegate, UICollectionVi
     }
     
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 187, height: 240)
+    }
     
 }
 
@@ -142,6 +147,7 @@ extension TaskControllerViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TASK_TABLE_VIEW_CELL_ID, for: indexPath) as? TaskTableCell{
             cell.configure(task: upcomingTasks[indexPath.row])
+            
             return cell
         }
         return UITableViewCell()

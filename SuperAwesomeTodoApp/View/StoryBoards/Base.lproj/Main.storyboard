@@ -124,7 +124,6 @@
                                                 <constraint firstAttribute="bottom" secondItem="uME-az-zQM" secondAttribute="bottom" constant="10" id="qNc-L9-1hC"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="187" height="243"/>
                                         <connections>
                                             <outlet property="calendarImgView" destination="4bH-nf-Dkf" id="EYN-fB-CRG"/>
                                             <outlet property="card" destination="uME-az-zQM" id="hFn-nZ-xYI"/>
