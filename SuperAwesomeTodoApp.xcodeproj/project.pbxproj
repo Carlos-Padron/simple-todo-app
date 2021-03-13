@@ -23,6 +23,7 @@
 		073865E525E7537F003B33F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073865E325E7537F003B33F3 /* LaunchScreen.storyboard */; };
 		07AFE2FD25ECB44D00EB9C8F /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AFE2FC25ECB44D00EB9C8F /* DateExtension.swift */; };
 		07AFE30025ECB85D00EB9C8F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AFE2FF25ECB85D00EB9C8F /* StringExtension.swift */; };
+		07D9FA9C25FD53AA0098F765 /* DeleteTaskModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D9FA9B25FD53AA0098F765 /* DeleteTaskModal.swift */; };
 		07EEA06A25EAB19B0039125D /* TaskControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEA06925EAB19B0039125D /* TaskControllerViewController.swift */; };
 		07EEA06F25EAB47F0039125D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEA06E25EAB47F0039125D /* Constants.swift */; };
 		07FE1EAA25EF30D000CBC059 /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FE1EA925EF30D000CBC059 /* textField.swift */; };
@@ -47,6 +48,7 @@
 		073865E625E7537F003B33F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07AFE2FC25ECB44D00EB9C8F /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		07AFE2FF25ECB85D00EB9C8F /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		07D9FA9B25FD53AA0098F765 /* DeleteTaskModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTaskModal.swift; sourceTree = "<group>"; };
 		07EEA06925EAB19B0039125D /* TaskControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskControllerViewController.swift; sourceTree = "<group>"; };
 		07EEA06E25EAB47F0039125D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		07FE1EA925EF30D000CBC059 /* textField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				07EEA06925EAB19B0039125D /* TaskControllerViewController.swift */,
 				0700C2AC25EDE9F60094DA7F /* AddTaskModal.swift */,
+				07D9FA9B25FD53AA0098F765 /* DeleteTaskModal.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				072384B725EA12DF008818F8 /* TaskCollectionCell.swift in Sources */,
 				072384A825E9E77E008818F8 /* Card.swift in Sources */,
 				07AFE30025ECB85D00EB9C8F /* StringExtension.swift in Sources */,
+				07D9FA9C25FD53AA0098F765 /* DeleteTaskModal.swift in Sources */,
 				072384B425EA0FCB008818F8 /* Header.swift in Sources */,
 				07FE1EAA25EF30D000CBC059 /* textField.swift in Sources */,
 				073865D925E7537F003B33F3 /* AppDelegate.swift in Sources */,
@@ -411,6 +415,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HDL3HYX7GC;
 				INFOPLIST_FILE = SuperAwesomeTodoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -429,6 +434,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HDL3HYX7GC;
 				INFOPLIST_FILE = SuperAwesomeTodoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

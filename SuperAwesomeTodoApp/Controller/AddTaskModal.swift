@@ -21,8 +21,27 @@ class AddTaskModal: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("modal loaded")
+        configureDatePicker()
+    }
+    
+    
+    func configureDatePicker(){
+    
+        let calendar = Calendar(identifier: .gregorian)
+        let currentDate = Date()
+        var dateComponent = DateComponents()
         
-        // Do any additional setup after loading the view.
+        dateComponent.calendar = calendar
+        dateComponent.day = -1
+        
+        let minDate =  calendar.date(byAdding: dateComponent, to: currentDate)
+        datePicker.minimumDate = minDate
+        datePicker.sizeToFit()
+        
+        if #available(iOS 13.4, *) {
+            
+            datePicker.preferredDatePickerStyle = .compact
+        }
     }
     
 
@@ -32,8 +51,6 @@ class AddTaskModal: UIViewController {
     
     @IBAction func onSave(_ sender: RoundedButton) {
         
-        
-    
         guard let taskName = taskTextField.text, taskName.count > 0 else{
             taskTextField.borderStyle        = .roundedRect
             taskTextField.layer.borderWidth  = 1

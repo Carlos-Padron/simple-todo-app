@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9bb-kv-RfU">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -83,16 +84,15 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="Mc4-o1-REZ">
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="Mc4-o1-REZ">
                                         <rect key="frame" x="30" y="164.33333333333331" width="274" height="40"/>
-                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <color key="tintColor" systemColor="systemIndigoColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="ZS4-oJ-qqe"/>
                                         </constraints>
                                     </datePicker>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="7st-5w-K2k"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="BtN-xN-OiT"/>
@@ -132,8 +132,107 @@
             </objects>
             <point key="canvasLocation" x="208.69565217391306" y="77.008928571428569"/>
         </scene>
+        <!--Delete Task Modal-->
+        <scene sceneID="5Gn-uZ-Aa8">
+            <objects>
+                <viewController storyboardIdentifier="DeleteTaskModal" id="727-hi-LPC" customClass="DeleteTaskModal" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lU2-Mz-Gth">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="si5-EB-Igb" customClass="Card" customModule="SuperAwesomeTodoApp" customModuleProvider="target">
+                                <rect key="frame" x="40" y="119" width="334" height="230"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete Task?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LM-3v-22k">
+                                        <rect key="frame" x="30" y="25.000000000000004" width="274" height="38.333333333333343"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you really want to delete this task? " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMS-d5-pHx">
+                                        <rect key="frame" x="30" y="68.333333333333343" width="274" height="65.666666666666657"/>
+                                        <color key="tintColor" red="0.43529411759999997" green="0.45098039220000002" blue="0.47058823529999999" alpha="0.029999999999999999" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                        <color key="textColor" red="0.43529411759999997" green="0.45098039220000002" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HuX-GS-KOn" customClass="RoundedButton" customModule="SuperAwesomeTodoApp" customModuleProvider="target">
+                                        <rect key="frame" x="204" y="155" width="100" height="50"/>
+                                        <color key="backgroundColor" red="0.35294117650000001" green="0.72941176470000002" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="fq5-Ir-ipk"/>
+                                            <constraint firstAttribute="height" constant="50" id="mO4-y3-hB3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                        <state key="normal" title="Delete">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRaduis">
+                                                <real key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="deleteBtnPressed:" destination="727-hi-LPC" eventType="touchUpInside" id="4eV-xB-yad"/>
+                                            <action selector="onSave:" destination="727-hi-LPC" eventType="touchUpInside" id="TAQ-B6-u9k"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8b-sO-Q2B" customClass="RoundedButton" customModule="SuperAwesomeTodoApp" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="155" width="100" height="50"/>
+                                        <color key="backgroundColor" red="0.91346961260000004" green="0.3393483162" blue="0.25484642390000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="M7B-Rk-8nb"/>
+                                            <constraint firstAttribute="height" constant="50" id="cZW-jW-EVz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRaduis">
+                                                <real key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="cancelBtnPressed:" destination="727-hi-LPC" eventType="touchUpInside" id="os3-qD-JQ6"/>
+                                            <action selector="onCancel:" destination="727-hi-LPC" eventType="touchUpInside" id="WwI-95-Zx1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="HuX-GS-KOn" secondAttribute="trailing" constant="30" id="KaI-Df-rtv"/>
+                                    <constraint firstItem="8LM-3v-22k" firstAttribute="top" secondItem="si5-EB-Igb" secondAttribute="top" constant="25" id="Sja-Ee-G29"/>
+                                    <constraint firstAttribute="trailing" secondItem="8LM-3v-22k" secondAttribute="trailing" constant="30" id="UOP-XA-aar"/>
+                                    <constraint firstItem="TMS-d5-pHx" firstAttribute="trailing" secondItem="8LM-3v-22k" secondAttribute="trailing" id="ab1-hu-C0c"/>
+                                    <constraint firstAttribute="bottom" secondItem="v8b-sO-Q2B" secondAttribute="bottom" constant="25" id="b6V-Jt-cwZ"/>
+                                    <constraint firstItem="v8b-sO-Q2B" firstAttribute="leading" secondItem="si5-EB-Igb" secondAttribute="leading" constant="30" id="cSJ-zE-h5g"/>
+                                    <constraint firstItem="TMS-d5-pHx" firstAttribute="leading" secondItem="8LM-3v-22k" secondAttribute="leading" id="fNm-CN-qLz"/>
+                                    <constraint firstAttribute="height" constant="230" id="iZ4-vN-83f"/>
+                                    <constraint firstItem="TMS-d5-pHx" firstAttribute="top" secondItem="8LM-3v-22k" secondAttribute="bottom" constant="5" id="mTs-YI-JML"/>
+                                    <constraint firstAttribute="bottom" secondItem="HuX-GS-KOn" secondAttribute="bottom" constant="25" id="orM-9a-pDb"/>
+                                    <constraint firstItem="8LM-3v-22k" firstAttribute="leading" secondItem="si5-EB-Igb" secondAttribute="leading" constant="30" id="xvy-lZ-4K0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4kz-zD-QTJ"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.05492883799" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="si5-EB-Igb" firstAttribute="leading" secondItem="4kz-zD-QTJ" secondAttribute="leading" constant="40" id="HbA-bD-KeX"/>
+                            <constraint firstItem="4kz-zD-QTJ" firstAttribute="trailing" secondItem="si5-EB-Igb" secondAttribute="trailing" constant="40" id="d5P-wL-EP0"/>
+                            <constraint firstItem="si5-EB-Igb" firstAttribute="top" secondItem="4kz-zD-QTJ" secondAttribute="top" constant="75" id="sQH-WK-lWL"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JZN-9F-TV3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="895.6521739130435" y="76.339285714285708"/>
+        </scene>
     </scenes>
     <designables>
+        <designable name="HuX-GS-KOn">
+            <size key="intrinsicContentSize" width="62" height="40"/>
+        </designable>
         <designable name="NDi-dA-QyN">
             <size key="intrinsicContentSize" width="63" height="40"/>
         </designable>
@@ -141,16 +240,13 @@
             <size key="intrinsicContentSize" width="31" height="40"/>
         </designable>
         <designable name="lks-uu-0v6">
-            <size key="intrinsicContentSize" width="32" height="34"/>
+            <size key="intrinsicContentSize" width="62" height="34"/>
+        </designable>
+        <designable name="v8b-sO-Q2B">
+            <size key="intrinsicContentSize" width="63" height="40"/>
         </designable>
     </designables>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

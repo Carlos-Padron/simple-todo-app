@@ -184,12 +184,12 @@ extension TaskControllerViewController: TaskControllerDelegate{
         let taskDate = task.date.convertToStringWithDateFormat(format: "dd/MM/yyyy")
         let currentDate =  Date().convertToStringWithDateFormat(format: "dd/MM/yyyy")
         if taskDate == currentDate {
-            todaysTasks.insert(contentsOf: [task], at: 0)
+            todaysTasks.append(task)
             print(todaysTasks)
             self.TasksCollectionView.reloadData()
         }else{
             print("se llena tabla de abajo")
-            upcomingTasks.insert(contentsOf: [task], at: 0)
+            upcomingTasks.append(task)
             self.TasksTableView.reloadData()
         }
     }
