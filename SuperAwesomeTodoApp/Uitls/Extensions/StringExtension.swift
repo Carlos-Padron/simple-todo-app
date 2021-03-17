@@ -15,7 +15,7 @@ extension String{
         dateFormatter.timeZone   = TimeZone.current
         dateFormatter.locale     = Locale.current
         
-        return dateFormatter.date(from: "2015-04-01T11:42:00") // replace Date String
+        return dateFormatter.date(from: self)
     }
 
 }

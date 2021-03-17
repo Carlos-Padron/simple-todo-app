@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9bb-kv-RfU">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -135,7 +134,7 @@
         <!--Delete Task Modal-->
         <scene sceneID="5Gn-uZ-Aa8">
             <objects>
-                <viewController storyboardIdentifier="DeleteTaskModal" id="727-hi-LPC" customClass="DeleteTaskModal" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DeleteTaskModal" id="727-hi-LPC" customClass="DeleteTaskModal" customModule="SuperAwesomeTodoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lU2-Mz-Gth">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -174,7 +173,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="deleteBtnPressed:" destination="727-hi-LPC" eventType="touchUpInside" id="4eV-xB-yad"/>
-                                            <action selector="onSave:" destination="727-hi-LPC" eventType="touchUpInside" id="TAQ-B6-u9k"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8b-sO-Q2B" customClass="RoundedButton" customModule="SuperAwesomeTodoApp" customModuleProvider="target">
@@ -195,7 +193,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="cancelBtnPressed:" destination="727-hi-LPC" eventType="touchUpInside" id="os3-qD-JQ6"/>
-                                            <action selector="onCancel:" destination="727-hi-LPC" eventType="touchUpInside" id="WwI-95-Zx1"/>
                                         </connections>
                                     </button>
                                 </subviews>

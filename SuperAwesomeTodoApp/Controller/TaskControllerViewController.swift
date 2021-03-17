@@ -9,6 +9,7 @@ import UIKit
 
 protocol TaskControllerDelegate:class {
     func didSaveTask(task: TaskModel)
+    func didDeleteTask(taskIndexPath: IndexPath, taskType: TaskType)
 }
 
 
@@ -80,6 +81,7 @@ class TaskControllerViewController: UIViewController, UIGestureRecognizerDelegat
   
 }
 
+// MARK: TaskCollectionView
 extension TaskControllerViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -137,7 +139,20 @@ extension TaskControllerViewController: UICollectionViewDelegate, UICollectionVi
             let touchPoint = sender.location(in: TasksCollectionView)
             if let indexPath = self.TasksCollectionView.indexPathForItem(at: touchPoint) {
                 
+                let selectedTask = self.todaysTasks[indexPath.row]
                 
+                let storyboard =  UIStoryboard(name: "Modal", bundle: nil)
+                
+                if let deleteTaskModal = storyboard.instantiateViewController(identifier: "DeleteTaskModal") as? DeleteTaskModal{
+                    deleteTaskModal.modalTransitionStyle = .crossDissolve
+                    deleteTaskModal.modalPresentationStyle = .overFullScreen
+                    deleteTaskModal.task = selectedTask
+                    deleteTaskModal.taskIndex = indexPath
+                    deleteTaskModal.taskType = TaskType.Today
+                    deleteTaskModal.delegate = self
+                    
+                    present(deleteTaskModal, animated: true)
+                }
                 
             }
             
@@ -206,6 +221,7 @@ extension TaskControllerViewController: UITableViewDelegate, UITableViewDataSour
 
 
 extension TaskControllerViewController: TaskControllerDelegate{
+    
     func didSaveTask(task: TaskModel) {
         let taskDate = task.date.convertToStringWithDateFormat(format: "dd/MM/yyyy")
         let currentDate =  Date().convertToStringWithDateFormat(format: "dd/MM/yyyy")
@@ -219,6 +235,20 @@ extension TaskControllerViewController: TaskControllerDelegate{
             self.TasksTableView.reloadData()
         }
     }
+    
+    func didDeleteTask(taskIndexPath: IndexPath, taskType: TaskType) {
+        switch taskType {
+        case .Today:
+            self.todaysTasks.remove(at: taskIndexPath.row)
+            self.TasksCollectionView.deleteItems(at: [taskIndexPath])
+        default:
+            print("update tableview")
+        }
+    }
+    
+    
+    
+    
     
     
 }

@@ -16,6 +16,7 @@
 		072384A825E9E77E008818F8 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072384A725E9E77E008818F8 /* Card.swift */; };
 		072384B425EA0FCB008818F8 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072384B325EA0FCB008818F8 /* Header.swift */; };
 		072384B725EA12DF008818F8 /* TaskCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072384B625EA12DF008818F8 /* TaskCollectionCell.swift */; };
+		07283FE82601A65600A7F92C /* TaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07283FE72601A65600A7F92C /* TaskType.swift */; };
 		073865D925E7537F003B33F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073865D825E7537F003B33F3 /* AppDelegate.swift */; };
 		073865DB25E7537F003B33F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073865DA25E7537F003B33F3 /* SceneDelegate.swift */; };
 		073865E025E7537F003B33F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073865DE25E7537F003B33F3 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		072384A725E9E77E008818F8 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		072384B325EA0FCB008818F8 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		072384B625EA12DF008818F8 /* TaskCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCollectionCell.swift; sourceTree = "<group>"; };
+		07283FE72601A65600A7F92C /* TaskType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskType.swift; sourceTree = "<group>"; };
 		073865D525E7537F003B33F3 /* SuperAwesomeTodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperAwesomeTodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		073865D825E7537F003B33F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		073865DA25E7537F003B33F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		07283FE62601A62200A7F92C /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				07283FE72601A65600A7F92C /* TaskType.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		073865CC25E7537F003B33F3 = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +176,7 @@
 		07EEA06C25EAB4410039125D /* Uitls */ = {
 			isa = PBXGroup;
 			children = (
+				07283FE62601A62200A7F92C /* Enums */,
 				071F668925F0821400250008 /* Services */,
 				07AFE2FB25ECB42A00EB9C8F /* Extensions */,
 				07EEA06D25EAB4510039125D /* Constants */,
@@ -264,6 +275,7 @@
 				0700C2B925EDF09A0094DA7F /* RoundedButton.swift in Sources */,
 				071F668E25F0966900250008 /* TaskTableCell.swift in Sources */,
 				072384A525E9E3FA008818F8 /* TaskModel.swift in Sources */,
+				07283FE82601A65600A7F92C /* TaskType.swift in Sources */,
 				071F668B25F0823000250008 /* TaskService.swift in Sources */,
 				0700C2AD25EDE9F60094DA7F /* AddTaskModal.swift in Sources */,
 				073865DB25E7537F003B33F3 /* SceneDelegate.swift in Sources */,

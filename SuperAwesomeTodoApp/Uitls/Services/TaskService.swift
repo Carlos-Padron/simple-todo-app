@@ -11,45 +11,13 @@ class TaskManager {
     
     static let shared =  TaskManager()
     
-    private var tasks: [TaskModel] = [
-//        TaskModel(name: "Code in Swift", date: Date()),
-//        TaskModel(name: "Feed Yui", date: Date()),
-//        TaskModel(name: "Wash the dishes", date: Date()),
-//        TaskModel(name: "Study algorithms", date: Date()),
-//        TaskModel(name: "Do exercise", date: Date()),
-//        TaskModel(name: "Clean Yui's litter", date: Date()),
-//        TaskModel(name: "Learn node", date: Date()),
-//        TaskModel(name: "Finish the node js project", date: Date()),
-//        TaskModel(name: "Buy Berr", date: Date()),
-//        TaskModel(name: "Code in Swift", date: Date()),
-//        TaskModel(name: "Feed Yui", date: Date()),
-//        TaskModel(name: "Wash the dishes", date: Date()),
-//        TaskModel(name: "Study algorithms", date: Date()),
-//        TaskModel(name: "Do exercise", date: Date()),
-//        TaskModel(name: "Clean Yui's litter", date: Date()),
-//        TaskModel(name: "Learn node", date: Date()),
-//        TaskModel(name: "Finish the node js project", date: Date()),
-//        TaskModel(name: "Buy Beer", date: Date()),
-//        TaskModel(name: "Code in Swift", date: Date()),
-//        TaskModel(name: "Feed Yui", date: Date()),
-//        TaskModel(name: "Wash the dishes", date: Date()),
-//        TaskModel(name: "Study algorithms", date: Date()),
-//        TaskModel(name: "Do exercise", date: Date()),
-//        TaskModel(name: "Clean Yui's litter", date: Date()),
-//        TaskModel(name: "Learn node", date: Date()),
-//        TaskModel(name: "Finish the node js project", date: Date()),
-//        TaskModel(name: "Buy Beer", date: Date()),
-
-    ]
-    
-    
+    private var tasks: [TaskModel] = []
     
     func fetchTodaysTasks()->[TaskModel] {
         
         let todayTasks = tasks.filter { (TaskModel) -> Bool in
             return TaskModel.date.convertToStringWithDateFormat(format: "dd/MM/yyyy") == Date().convertToStringWithDateFormat(format: "dd/MM/yyyy")
         }
-        
         return todayTasks
     }
     
@@ -57,8 +25,13 @@ class TaskManager {
         let todayTasks = tasks.filter { (TaskModel) -> Bool in
             return TaskModel.date.convertToStringWithDateFormat(format: "dd/MM/yyyy") != Date().convertToStringWithDateFormat(format: "dd/MM/yyyy")
         }
-        
         return todayTasks
+    }
+    
+    func sortArrayByDate(){
+        tasks.sort { (taskModel1, TaskModel2) -> Bool in
+            return taskModel1.date < TaskModel2.date
+        }
     }
     
     func saveTask(task: TaskModel, completed: @escaping (_ error :Bool)-> Void ){
@@ -66,12 +39,17 @@ class TaskManager {
         completed(true)
     }
     
-    func deleteTask(completed: @escaping (_ error :Bool)-> Void ){
-        
+    func deleteTask(taskToDelete: TaskModel, completed: @escaping (_ error :Bool)-> Void ){
+        self.tasks = tasks.filter { (task) -> Bool in
+            return task.ID != taskToDelete.ID
+        }
+        sortArrayByDate()
+        completed(true)
     }
     
     func setCompletedOrUncompleted(index: Int, completed: @escaping (_ task: TaskModel) -> Void){
         tasks[index].completed = !tasks[index].completed
+        sortArrayByDate()
         completed(tasks[index])
     }
     
