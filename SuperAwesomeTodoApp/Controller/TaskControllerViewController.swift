@@ -12,7 +12,7 @@ protocol TaskControllerDelegate:class {
 }
 
 
-class TaskControllerViewController: UIViewController {
+class TaskControllerViewController: UIViewController, UIGestureRecognizerDelegate {
 
     //Variables
     var todaysTasks: [TaskModel]   = []
@@ -37,7 +37,14 @@ class TaskControllerViewController: UIViewController {
     
     private func configureCollectionView(){
         TasksCollectionView.delegate = self
-        TasksCollectionView.dataSource = self        
+        TasksCollectionView.dataSource = self
+        
+        let longTapGesture = UILongPressGestureRecognizer(target: self, action: #selector(didSelectCollectionCellWithLongPressed(sender:)  ))
+        longTapGesture.delegate = self
+        
+        self.TasksCollectionView.addGestureRecognizer(longTapGesture)
+        
+        
     }
     
     
@@ -122,6 +129,22 @@ extension TaskControllerViewController: UICollectionViewDelegate, UICollectionVi
         return CGSize(width: 187, height: 240)
     }
     
+    
+    @objc func didSelectCollectionCellWithLongPressed(sender: UILongPressGestureRecognizer){
+        
+        
+        if sender.state == UIGestureRecognizer.State.began {
+            let touchPoint = sender.location(in: TasksCollectionView)
+            if let indexPath = self.TasksCollectionView.indexPathForItem(at: touchPoint) {
+                
+                
+                
+            }
+            
+            
+        }
+    }
+    
 }
 
 extension TaskControllerViewController: UITableViewDelegate, UITableViewDataSource{
@@ -175,6 +198,9 @@ extension TaskControllerViewController: UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    @objc func didSelectTableCellWithLongPressed(){
+        
+    }
     
 }
 
