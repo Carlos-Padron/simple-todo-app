@@ -53,6 +53,10 @@ class TaskControllerViewController: UIViewController, UIGestureRecognizerDelegat
     private func configureTableView(){
         TasksTableView.delegate   = self
         TasksTableView.dataSource = self
+        
+        let longTapGesture = UILongPressGestureRecognizer(target: self, action: #selector(didSelectTableCellWithLongPressed(sender:)))
+        longTapGesture.delegate = self
+        self.TasksTableView.addGestureRecognizer(longTapGesture)
     }
     
     private func fetchTodaysTaks(){
@@ -133,17 +137,16 @@ extension TaskControllerViewController: UICollectionViewDelegate, UICollectionVi
     
     
     @objc func didSelectCollectionCellWithLongPressed(sender: UILongPressGestureRecognizer){
-        
-        
+
         if sender.state == UIGestureRecognizer.State.began {
             let touchPoint = sender.location(in: TasksCollectionView)
             if let indexPath = self.TasksCollectionView.indexPathForItem(at: touchPoint) {
                 
                 let selectedTask = self.todaysTasks[indexPath.row]
-                
                 let storyboard =  UIStoryboard(name: "Modal", bundle: nil)
                 
                 if let deleteTaskModal = storyboard.instantiateViewController(identifier: "DeleteTaskModal") as? DeleteTaskModal{
+                    
                     deleteTaskModal.modalTransitionStyle = .crossDissolve
                     deleteTaskModal.modalPresentationStyle = .overFullScreen
                     deleteTaskModal.task = selectedTask
@@ -153,15 +156,13 @@ extension TaskControllerViewController: UICollectionViewDelegate, UICollectionVi
                     
                     present(deleteTaskModal, animated: true)
                 }
-                
             }
-            
-            
         }
     }
     
 }
 
+// MARK: TaskTableView
 extension TaskControllerViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if upcomingTasks.isEmpty {
@@ -213,8 +214,28 @@ extension TaskControllerViewController: UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    @objc func didSelectTableCellWithLongPressed(){
-        
+    @objc func didSelectTableCellWithLongPressed(sender: UILongPressGestureRecognizer){
+        if sender.state == UIGestureRecognizer.State.began {
+            let touchePoint = sender.location(in: self.TasksTableView)
+            
+            if let indexPath = self.TasksTableView.indexPathForRow(at: touchePoint) {
+                
+                let selectedTask = self.upcomingTasks[indexPath.row]
+                let storyboard = UIStoryboard(name: "Modal", bundle: nil)
+                
+                if let deleteTaskModal = storyboard.instantiateViewController(identifier: "DeleteTaskModal") as? DeleteTaskModal{
+                    
+                    deleteTaskModal.modalTransitionStyle = .crossDissolve
+                    deleteTaskModal.modalPresentationStyle = .overFullScreen
+                    deleteTaskModal.task = selectedTask
+                    deleteTaskModal.taskIndex = indexPath
+                    deleteTaskModal.taskType = TaskType.Upcoming
+                    deleteTaskModal.delegate = self
+                    
+                    present(deleteTaskModal, animated: true)
+                }
+            }
+        }
     }
     
 }
@@ -242,7 +263,8 @@ extension TaskControllerViewController: TaskControllerDelegate{
             self.todaysTasks.remove(at: taskIndexPath.row)
             self.TasksCollectionView.deleteItems(at: [taskIndexPath])
         default:
-            print("update tableview")
+            self.upcomingTasks.remove(at: taskIndexPath.row)
+            self.TasksTableView.deleteRows(at: [taskIndexPath], with: .fade)
         }
     }
     
