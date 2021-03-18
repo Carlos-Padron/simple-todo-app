@@ -31,6 +31,4 @@ import UIKit
         layer.rasterizationScale = UIScreen.main.scale
     }
     
-    
-    
 }

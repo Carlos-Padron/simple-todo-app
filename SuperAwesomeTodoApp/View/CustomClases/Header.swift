@@ -22,7 +22,6 @@ import UIKit
     func configure(){
         layer.cornerRadius = 40
         layer.maskedCorners = [ .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        
     }
 
 }

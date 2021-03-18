@@ -22,13 +22,10 @@ class TaskTableCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         layoutUI()
-        // Initialization code
     }
     
     
     func configure(task: TaskModel){
-        
-        print("cell configured")
         
         taskLabel.text = task.name
         dateLabel.text = task.date.convertToStringWithDateFormat(format: "dd/MM/yyyy")
@@ -44,7 +41,6 @@ class TaskTableCell: UITableViewCell {
         
         leftBorder.backgroundColor = task.color.cgColor
         
-        print(task.completed)
         
         if task.completed {
             checkImage.image = UIImage(systemName: "checkmark.circle")
@@ -96,10 +92,6 @@ class TaskTableCell: UITableViewCell {
             dateLabel.trailingAnchor.constraint(equalTo: checkImage.trailingAnchor, constant: -10),
             dateLabel.bottomAnchor.constraint(equalTo: baseView.bottomAnchor, constant: -10),
         ])
-        
-        
-        
-        
     }
 
 }

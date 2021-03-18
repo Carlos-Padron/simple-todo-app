@@ -20,13 +20,11 @@ class AddTaskModal: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("modal loaded")
         configureDatePicker()
     }
     
     
     func configureDatePicker(){
-    
         let calendar = Calendar(identifier: .gregorian)
         let currentDate = Date()
         var dateComponent = DateComponents()
@@ -49,6 +47,7 @@ class AddTaskModal: UIViewController {
         dismiss(animated: true)
     }
     
+    //Saves a new task
     @IBAction func onSave(_ sender: RoundedButton) {
         
         guard let taskName = taskTextField.text, taskName.count > 0 else{
@@ -64,13 +63,16 @@ class AddTaskModal: UIViewController {
         let colorIndex = Int.random(in: 0..<Constants.colorArray.count)
         
         let newTask = TaskModel(name: taskName, date: datePicker.date, color: Constants.colorArray[colorIndex])
+        
         TaskManager.shared.saveTask(task: newTask) { [weak self] (error) in
             guard let self = self else { return }
             switch error{
             case true:
+                
                 self.taskControllerDelegate.didSaveTask(task: newTask)
                 self.dismiss(animated: true)
             case false:
+                
                 let alert = UIAlertController(title: "Oops", message: "Something went wrong", preferredStyle: .alert)
                 let alertAction = UIAlertAction(title: "Ok", style: .default) { (action) in
                     self.dismiss(animated: true)

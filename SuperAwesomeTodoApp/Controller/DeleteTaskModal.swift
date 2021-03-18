@@ -9,6 +9,7 @@ import UIKit
 
 class DeleteTaskModal: UIViewController {
 
+    //Variables
     var task: TaskModel!
     var taskType: TaskType!
     var taskIndex: IndexPath!
@@ -16,8 +17,6 @@ class DeleteTaskModal: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(taskType.rawValue)
-        // Do any additional setup after loading the view.
     }
     
 
@@ -26,8 +25,8 @@ class DeleteTaskModal: UIViewController {
     }
     
     @IBAction func deleteBtnPressed(_ sender: UIButton) {
-        print("task deleted")
         
+        // Deletes the selected task
         TaskManager.shared.deleteTask(taskToDelete: task) { [weak self] (result) in
             guard let self = self else { return }
             

@@ -33,8 +33,6 @@ import UIKit
         rightViewMode = .always
         leftView = padding
         rightView = padding
-        
-        
     }
 
 }

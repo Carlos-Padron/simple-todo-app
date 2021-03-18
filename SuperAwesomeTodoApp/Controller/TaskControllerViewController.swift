@@ -33,7 +33,6 @@ class TaskControllerViewController: UIViewController, UIGestureRecognizerDelegat
         configureTableView()
         fetchTodaysTaks()
         fetchUpcomingTaks()
-        // Do any additional setup after loading the view.
     }
     
     private func configureCollectionView(){
@@ -44,8 +43,6 @@ class TaskControllerViewController: UIViewController, UIGestureRecognizerDelegat
         longTapGesture.delegate = self
         
         self.TasksCollectionView.addGestureRecognizer(longTapGesture)
-        
-        
     }
     
     
@@ -69,7 +66,6 @@ class TaskControllerViewController: UIViewController, UIGestureRecognizerDelegat
     }
     
     @IBAction func addTaskOnTap(_ sender: UIButton) {
-        print("Tapped")
         
         let storyboard = UIStoryboard(name: "Modal", bundle: nil)
         if let modal = storyboard.instantiateViewController(withIdentifier: "AddTaskModal") as? AddTaskModal {
@@ -105,6 +101,7 @@ extension TaskControllerViewController: UICollectionViewDelegate, UICollectionVi
         return todaysTasks.count
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.TASK_COLLECTION_VIEW_CELL_ID, for: indexPath) as? TaskCollectionCell{
             cell.configure(task: todaysTasks[indexPath.row])
@@ -112,6 +109,7 @@ extension TaskControllerViewController: UICollectionViewDelegate, UICollectionVi
         }
         return UICollectionViewCell()
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         TaskManager.shared.setCompletedOrUncompleted(index: indexPath.row){ [weak self] task in
@@ -164,6 +162,7 @@ extension TaskControllerViewController: UICollectionViewDelegate, UICollectionVi
 
 // MARK: TaskTableView
 extension TaskControllerViewController: UITableViewDelegate, UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if upcomingTasks.isEmpty {
             let noDataLabel: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: TasksTableView.bounds.size.width, height: TasksTableView.bounds.size.height))
@@ -246,12 +245,11 @@ extension TaskControllerViewController: TaskControllerDelegate{
     func didSaveTask(task: TaskModel) {
         let taskDate = task.date.convertToStringWithDateFormat(format: "dd/MM/yyyy")
         let currentDate =  Date().convertToStringWithDateFormat(format: "dd/MM/yyyy")
+        
         if taskDate == currentDate {
             todaysTasks.append(task)
-            print(todaysTasks)
             self.TasksCollectionView.reloadData()
         }else{
-            print("se llena tabla de abajo")
             upcomingTasks.append(task)
             self.TasksTableView.reloadData()
         }
